@@ -1,0 +1,70 @@
+<<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Title Page</title>
+
+		<!-- Bootstrap CSS -->
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script>
+		function loadPage(){
+			var xmlhttp;
+				if (window.XMLHttpRequest)
+	  			{// code for IE7+, Firefox, Chrome, Opera, Safari
+	  				xmlhttp=new XMLHttpRequest();
+	  			}
+				else
+	 			{// code for IE6, IE5
+	  				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	  			}
+  			xmlhttp.onreadystatechange = function() {
+  				if (xmlhttp.readyState==4 && xmlhttp.status==200)
+   				{
+    				document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    			}
+  			}
+
+  			xmlhttp.open("GET","hello.html",true);
+			xmlhttp.send();
+
+		}
+		</script>
+		
+	</head>
+	<body>
+
+		<p onclick="loadPage();" id="click">click</p>
+
+		 <div class="tabbable tabs-left">
+        <ul class="nav nav-tabs">
+          <li><a href="#a" data-toggle="tab">One</a></li>
+          <li class="active"><a href="#b" data-toggle="tab">Two</a></li>
+          <li><a href="#c" data-toggle="tab">Twee</a></li>
+        </ul>
+        <div class="tab-content">
+         <div class="tab-pane active" id="a">Lorem ipsum dolor sit amet, charetra varius quam sit amet vulputate. 
+         Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero.</div>
+         <div class="tab-pane" id="b">Secondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
+         Aliquam in felis sit amet augue.</div>
+         <div class="tab-pane" id="c">Thirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
+         Quisque mauris augue, molestie tincidunt condimentum vitae. </div>
+        </div>
+      </div>
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		
+	</body>
+</html>
